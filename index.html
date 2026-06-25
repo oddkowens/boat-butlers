@@ -100,7 +100,7 @@
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
   .nav-toggle span{display:block;width:22px;height:2px;background:var(--navy);margin:4px 0;transition:.2s;}
 
-  @media(max-width:920px){
+  @media(max-width:1024px){
     .nav-links{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:#fff;gap:0;padding:8px 22px 20px;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .25s ease;align-items:stretch;box-shadow:0 18px 30px -20px rgba(15,27,45,.4);}
     .nav-links.open{transform:translateY(0);}
     .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);}
@@ -123,7 +123,7 @@
 
   /* ---------- Steps ---------- */
   .steps{background:var(--cream);padding:64px 0;}
-  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:38px;}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:38px;}
   .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 26px;position:relative;}
   .step-num{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold-dark);background:var(--cream);border:1px solid var(--navy-tint-2);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .step h3{font-size:21px;margin:18px 0 8px;color:var(--navy);}
@@ -155,6 +155,17 @@
   .slot-tag{display:inline-block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,153,90,.5);border-radius:999px;padding:5px 12px;font-weight:600;margin-bottom:16px;}
   .slot h3{color:#fff;font-size:23px;margin-bottom:10px;}
   .slot p{color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 22px;font-size:15px;}
+  .avail-note{text-align:center;color:rgba(255,255,255,.7);font-size:13.5px;margin:26px auto 0;letter-spacing:.3px;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--cream);}
+  .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .faq-item summary{list-style:none;cursor:pointer;padding:22px 24px;font-weight:600;font-size:17px;color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-family:'Playfair Display',serif;font-size:24px;color:var(--gold-dark);font-weight:700;line-height:1;transition:transform .2s ease;flex:none;}
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item .faq-a{padding:0 24px 22px;color:var(--muted);font-size:15px;}
 
   /* ---------- Membership ---------- */
   .mem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
@@ -219,8 +230,8 @@
 
   /* ---------- Responsive ---------- */
   @media(max-width:900px){
-    .steps-grid,.svc-grid,.mem-grid{grid-template-columns:1fr;}
-    .merch-grid{grid-template-columns:1fr 1fr;}
+    .svc-grid,.mem-grid{grid-template-columns:1fr;}
+    .steps-grid,.merch-grid{grid-template-columns:1fr 1fr;}
     .about-grid,.contact-grid{grid-template-columns:1fr;gap:34px;}
     .about-img{order:-1;}
   }
@@ -228,7 +239,7 @@
     .wrap{padding:0 20px;}
     .field-row{grid-template-columns:1fr;}
     .foot-grid{grid-template-columns:1fr;gap:28px;}
-    .merch-grid{grid-template-columns:1fr;}
+    .merch-grid,.steps-grid{grid-template-columns:1fr;}
     section{padding:60px 0;}
     .hero-inner{padding-top:74px;padding-bottom:80px;}
     .hero p{font-size:17px;}
@@ -266,6 +277,7 @@
       <a href="#membership">Membership</a>
       <a href="#merch">Merch</a>
       <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="#member-login" class="nav-mobile-cta">Member Login</a>
       <a href="#booking" class="nav-mobile-cta primary">Book a Drop Time</a>
@@ -305,23 +317,28 @@
   <div class="wrap">
     <div class="section-head" style="margin-bottom:0;">
       <p class="eyebrow">How it works</p>
-      <h2>Three steps to the water</h2>
+      <h2>From request to retrieval</h2>
     </div>
     <div class="steps-grid">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Reserve a drop time</h3>
-        <p>Pick the day and time you want to be on the water. We schedule the launch around your plans.</p>
+        <h3>Request a drop time</h3>
+        <p>Book the day and time you want to be on the water — online in seconds. We schedule the launch around your plans.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>We prep &amp; launch</h3>
-        <p>Your butler fuels, checks, and launches your boat so it's ready and waiting when you arrive.</p>
+        <p>Your butler fuels, checks, and launches your boat so it's dockside, ready, and waiting the moment you arrive.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>You enjoy — we clean up</h3>
-        <p>Come back, step off, and go. We retrieve, rinse, and tuck your boat away until next time.</p>
+        <h3>You enjoy the day</h3>
+        <p>Step on and go. No ramp lines, no trailer, no prep — just the water and your time on it.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Request pull-out</h3>
+        <p>Done for the day? Tap to have us retrieve, rinse, and tuck your boat away until next time.</p>
       </div>
     </div>
   </div>
@@ -400,6 +417,9 @@
       <span class="day">Sat</span>
       <span class="day closed">Sun</span>
     </div>
+
+    <!-- Availability note — confirm season/hours with client -->
+    <p class="avail-note">In-season service · Monday–Saturday · limited daily drop times — reserve early.</p>
 
     <!-- =====================================================================
          SLOT: BOOKING / SCHEDULING EMBED
@@ -517,6 +537,52 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<!-- Placeholder copy — confirm answers (hours, lead time, coverage, pricing) with client -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions, answered</h2>
+      <p>Everything you need to know before your first drop time. Don't see your question? Just reach out.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How far in advance do I need to book a drop time?</summary>
+        <div class="faq-a">We recommend reserving at least 24 hours ahead, especially on weekends and holidays when drop times fill quickly. Same-day requests are accommodated when slots are available.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What's included with a launch?</summary>
+        <div class="faq-a">Your boat is fueled, systems-checked, and launched so it's dockside and ready when you arrive. When you're done, we retrieve, rinse, and store it — no trailering or cleanup on your end.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I need a trailer or my own slip?</summary>
+        <div class="faq-a">No. We handle storage and launching for you, so there's no trailer to tow and no slip to rent. Just show up and step aboard.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What happens if the weather turns?</summary>
+        <div class="faq-a">If conditions aren't safe for boating, we'll work with you to reschedule your drop time at no penalty. Your safety comes first, always.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What kinds of boats do you service?</summary>
+        <div class="faq-a">We care for most center consoles, bowriders, and cruisers common to the Cape Fear coast. Reach out with your make, model, and length and we'll confirm we're a fit.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I have to be a member to use the service?</summary>
+        <div class="faq-a">Membership unlocks priority drop times and bundled care at the best value, but you're welcome to book individual services as a non-member too.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What areas do you serve?</summary>
+        <div class="faq-a">We serve Wilmington, Wrightsville Beach, and surrounding marinas along the Cape Fear coast. Not sure if you're in range? Send us your location and we'll let you know.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How do payments work?</summary>
+        <div class="faq-a">Secure online payment and in-person checkout are both available. Memberships are billed on a simple recurring plan — full details are shared when you sign up.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
   <div class="wrap contact-grid">
@@ -568,6 +634,7 @@
         <a href="#booking">Drop Times</a>
         <a href="#membership">Membership</a>
         <a href="#merch">Merch</a>
+        <a href="#faq">FAQ</a>
       </div>
       <div class="foot-col">
         <h4>Account</h4>
